@@ -13,7 +13,9 @@ plt.style.use('dark_background')
 
 
 
-st.title('Hi! This is a personal data analysis and engineering project about statistics from the Chess World Championship!')
+st.title('Chess World Championship Statistics Project')
+
+st.header('This is a personal data analysis and engineering project using data from the Chess World Championship.')
 
 st.write('The data set used for this project comes from the Kaggle link below!')
 
