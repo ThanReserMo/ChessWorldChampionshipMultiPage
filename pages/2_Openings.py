@@ -47,6 +47,10 @@ game_and_eco=game_info_df[['game_id','eco']].drop_duplicates()
 #https://stackoverflow.com/questions/53106428/pandas-merge-returning-only-null-values
 game_and_eco_and_name=game_and_eco.merge(eco_codes_df)
 
-games_within_time_period=game_and_eco_and_name[(game_and_eco_and_name.date_played>=start_date)&(game_and_eco_and_name.date_played<=end_date)]
+game_info_and_name=game_and_eco_and_name.merge(game_info_df)
+
+game_info_and_name['date_played']=pd.to_datetime(game_info_and_name['date_played'],format='%Y.%m.%d',errors='coerce')
+
+games_within_time_period=game_info_and_name[(game_info_and_name.date_played>=start_date)&(game_info_and_name.date_played<=end_date)]
 
 st.dataframe(games_within_time_period)
