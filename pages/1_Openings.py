@@ -57,8 +57,6 @@ n=st.number_input(label='Enter the number of top openings.',value=10)
 
 top_n_openings=games_within_time_period['eco_name'].value_counts()[:n]
 
-st.header(f'Top {n} openings')
-st.dataframe(top_n_openings.index)
 
 game_info_for_top_5=games_within_time_period.loc[games_within_time_period.eco_name.isin(top_n_openings.index)]
 
@@ -72,5 +70,8 @@ plt.xticks(rotation=90)
 plt.figure(figsize=(12,12))
 #https://discuss.streamlit.io/t/code-to-create-chart-with-seaborn-objects/36491
 st.pyplot(opening_countplot.figure)
+
+st.header(f'Top {n} openings')
+st.dataframe(top_n_openings.index)
 
 
