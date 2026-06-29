@@ -104,7 +104,7 @@ st.dataframe(top_5_openings)
 
 st.header('Opening distribution')
 plt.figure()
-opening_countplot=sns.countplot(data=games_selected_and_openings,x='eco_name',hue='result')
+opening_countplot=sns.countplot(data=games_selected_and_openings,x='eco_name')
 #https://stackoverflow.com/questions/26540035/rotate-label-text-in-seaborn
 #stackoverflow.com/questions/20335290/matplotlib-plot-set-x-ticks
 plt.xticks(rotation=90)
