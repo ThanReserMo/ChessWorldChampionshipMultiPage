@@ -16,6 +16,17 @@ plt.style.use('dark_background')
 st.title('Search the top openings for specific time periods!')
 
 #st.sidebar.success("Select a page.")
+plt.figure()
+opening_countplot=sns.countplot(data=game_info_for_top_5,x='eco_name',hue='result')
+#https://stackoverflow.com/questions/26540035/rotate-label-text-in-seaborn
+#stackoverflow.com/questions/20335290/matplotlib-plot-set-x-ticks
+plt.xticks(rotation=90)
+plt.figure(figsize=(12,12))
+#https://discuss.streamlit.io/t/code-to-create-chart-with-seaborn-objects/36491
+st.pyplot(opening_countplot.figure)
+
+
+
 
 
 
@@ -63,14 +74,4 @@ st.dataframe(top_n_openings.index)
 game_info_for_top_5=games_within_time_period.loc[games_within_time_period.eco_name.isin(top_n_openings.index)]
 
 st.header('Opening distribution')
-
-plt.figure()
-opening_countplot=sns.countplot(data=game_info_for_top_5,x='eco_name',hue='result')
-#https://stackoverflow.com/questions/26540035/rotate-label-text-in-seaborn
-#stackoverflow.com/questions/20335290/matplotlib-plot-set-x-ticks
-plt.xticks(rotation=90)
-plt.figure(figsize=(12,12))
-#https://discuss.streamlit.io/t/code-to-create-chart-with-seaborn-objects/36491
-st.pyplot(opening_countplot.figure)
-
 
