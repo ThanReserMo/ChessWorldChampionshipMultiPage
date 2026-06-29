@@ -90,6 +90,8 @@ st.write(f"Number of games lost: {lost_games}")
 st.write(f"Total games: {total_games}")
 
 games_selected_and_openings=games_requested.merge(game_and_eco_and_name)
+
+games_where_player_white=games_selected_and_openings[games_selected_and_openings.white==players_name]
 #games_selected_and_opening_names=pd.concat([games_selected_and_openings,eco_codes_df])
 
 #https://stackoverflow.com/questions/48590268/pandas-get-the-most-frequent-values-of-a-column
@@ -97,7 +99,7 @@ top_5_openings=games_selected_and_openings['eco_name'].value_counts()[:5].index.
 
 
 
-st.write("Top 5 openings for selected games:")
+st.write("Top 5 openings for selected games where player played white:")
 st.dataframe(top_5_openings)
 
 plt.figure()
