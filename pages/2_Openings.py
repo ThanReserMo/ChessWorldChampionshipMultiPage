@@ -53,4 +53,9 @@ game_info_and_name['date_played']=pd.to_datetime(game_info_and_name['date_played
 
 games_within_time_period=game_info_and_name[(game_info_and_name.date_played>=start_date)&(game_info_and_name.date_played<=end_date)]
 
+top_5_opening=games_within_time_period['eco_name'].value_counts()[:5].index.to_list()
+
+st.write('Top 5 openings')
+st.dataframe(top_5_opening)
+
 st.dataframe(games_within_time_period)
