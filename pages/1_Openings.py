@@ -53,7 +53,7 @@ game_info_and_name['date_played']=pd.to_datetime(game_info_and_name['date_played
 
 games_within_time_period=game_info_and_name[(game_info_and_name.date_played>=start_date)&(game_info_and_name.date_played<=end_date)]
 
-n=st.number_input(label='Enter the number of top openings.',value=5)
+n=st.number_input(label='Enter the number of top openings.',value=10)
 
 top_n_openings=games_within_time_period['eco_name'].value_counts()[:n]
 
