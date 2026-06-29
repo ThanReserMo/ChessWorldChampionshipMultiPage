@@ -99,10 +99,10 @@ top_5_openings=games_selected_and_openings['eco_name'].value_counts()[:5].index.
 
 
 
-st.write("Top 5 openings for selected games where player played white:")
+st.header("Top 5 openings for selected games where player played white:")
 st.dataframe(top_5_openings)
 
-st.write('Openings distribution')
+st.header('Opening distribution')
 plt.figure()
 opening_countplot=sns.countplot(data=games_selected_and_openings,x='eco_name')
 #https://stackoverflow.com/questions/26540035/rotate-label-text-in-seaborn
