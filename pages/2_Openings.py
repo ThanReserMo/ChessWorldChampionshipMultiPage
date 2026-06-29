@@ -55,7 +55,7 @@ games_within_time_period=game_info_and_name[(game_info_and_name.date_played>=sta
 
 n=st.text_input(label='Enter the number of top openings.',value=5)
 
-top_n_openings=games_within_time_period['eco_name'].value_counts()[:n].index.to_list()
+top_n_openings=games_within_time_period['eco_name'].value_counts()[:5]
 
 st.write('Top 5 openings')
 st.dataframe(top_n_openings)
