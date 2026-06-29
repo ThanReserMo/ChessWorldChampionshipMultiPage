@@ -13,13 +13,16 @@ plt.style.use('dark_background')
 
 
 
-st.title('Chess World Championship Statistics Project')
+st.title('Hello!')
 
-st.header('This is a personal data analysis and engineering project using data from the Chess World Championship.')
+st.write('This is a personal data analysis and engineering project using data from the Chess World Championship.')
 
-st.write('The data set used for this project comes from the Kaggle link below!')
 
-st.link_button(label='Kaggle link',url='https://www.kaggle.com/datasets/zq1200/world-chess-championships-1866-to-2021')
+url = "https://www.kaggle.com/datasets/zq1200/world-chess-championships-1866-to-2021'"
+
+st.markdown("The data set used for this project can be found in this [Kaggle link](%s)! " % url)
+
+
 
 st.write('Use the buttons in the sidebar to navigate the site!')
 
