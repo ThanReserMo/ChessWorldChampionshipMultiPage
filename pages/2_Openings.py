@@ -58,4 +58,16 @@ top_5_opening=games_within_time_period['eco_name'].value_counts()[:5].index.to_l
 st.write('Top 5 openings')
 st.dataframe(top_5_opening)
 
+game_info_for_top_5=games_within_time_period.loc[games_within_time_period.eco_name.isin(top_5_opening)]
+
+plt.figure()
+opening_countplot=sns.countplot(data=game_info_for_top_5,x='eco_name',hue='result')
+#https://stackoverflow.com/questions/26540035/rotate-label-text-in-seaborn
+#stackoverflow.com/questions/20335290/matplotlib-plot-set-x-ticks
+plt.xticks(rotation=90)
+plt.figure(figsize=(12,12))
+#https://discuss.streamlit.io/t/code-to-create-chart-with-seaborn-objects/36491
+st.pyplot(opening_countplot.figure)
+
+
 st.dataframe(games_within_time_period)
