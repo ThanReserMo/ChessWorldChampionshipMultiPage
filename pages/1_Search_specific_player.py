@@ -21,7 +21,7 @@ st.title('Search a player\'s games between two dates!')
 
 
 start_date=st.date_input(label="Start Date",value='1866-01-01', min_value=datetime.date(year=1865, month=12, day=31), max_value=datetime.date(year=2022, month=12, day=31))
-end_date=st.date_input(label='End date',value='2022-01-01', max_value=datetime.date(year=2022, month=12, day=31))
+end_date=st.date_input(label='End date',value='2022-01-01', min_value=datetime.date(year=1866, month=12, day=31), max_value=datetime.date(year=2022, month=12, day=31))
 
 start_date=pd.Timestamp(start_date)
 end_date=pd.Timestamp(end_date)
