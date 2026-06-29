@@ -18,7 +18,7 @@ st.title('Hello!')
 st.write('This is a personal data analysis and engineering project using data from the Chess World Championship.')
 
 
-url = "https://www.kaggle.com/datasets/zq1200/world-chess-championships-1866-to-2021'"
+url = "https://www.kaggle.com/datasets/zq1200/world-chess-championships-1866-to-2021"
 
 st.markdown("The data set used for this project can be found in this [Kaggle link](%s)! " % url)
 
