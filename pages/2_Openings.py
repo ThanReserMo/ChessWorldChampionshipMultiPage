@@ -60,7 +60,7 @@ top_n_openings=games_within_time_period['eco_name'].value_counts()[:5]
 st.write('Top 5 openings')
 st.dataframe(top_n_openings)
 
-game_info_for_top_5=games_within_time_period.loc[games_within_time_period.eco_name.isin(top_n_openings)]
+game_info_for_top_5=games_within_time_period.loc[games_within_time_period.eco_name.isin(top_n_openings.eco_names)]
 
 plt.figure()
 opening_countplot=sns.countplot(data=game_info_for_top_5,x='eco_name',hue='result')
