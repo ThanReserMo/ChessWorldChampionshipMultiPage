@@ -70,4 +70,3 @@ plt.figure(figsize=(12,12))
 st.pyplot(opening_countplot.figure)
 
 
-st.dataframe(games_within_time_period)
