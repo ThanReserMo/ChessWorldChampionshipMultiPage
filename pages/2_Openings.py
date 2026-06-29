@@ -13,7 +13,7 @@ plt.style.use('dark_background')
 
 
 
-st.title('Search a player\'s games between two dates!')
+st.title('Search the top openings for specific time periods!')
 
 #st.sidebar.success("Select a page.")
 
