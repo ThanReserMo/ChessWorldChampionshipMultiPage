@@ -62,6 +62,8 @@ st.dataframe(top_n_openings.index)
 
 game_info_for_top_5=games_within_time_period.loc[games_within_time_period.eco_name.isin(top_n_openings.index)]
 
+st.header('Opening distribution')
+
 plt.figure()
 opening_countplot=sns.countplot(data=game_info_for_top_5,x='eco_name',hue='result')
 #https://stackoverflow.com/questions/26540035/rotate-label-text-in-seaborn
