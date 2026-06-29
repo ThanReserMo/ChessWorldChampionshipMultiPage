@@ -58,7 +58,7 @@ n=st.text_input(label='Enter the number of top openings.',value=5)
 top_n_openings=games_within_time_period['eco_name'].value_counts()[:5]
 
 st.write('Top 5 openings')
-st.dataframe(top_n_openings)
+st.dataframe(top_n_openings.index)
 
 game_info_for_top_5=games_within_time_period.loc[games_within_time_period.eco_name.isin(top_n_openings.index)]
 
