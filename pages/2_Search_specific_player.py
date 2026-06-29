@@ -52,7 +52,7 @@ games_without_draws=game_info_df[game_info_df.winner!='draw']
 #https://stackoverflow.com/questions/43401903/python-order-dataframe-alphabetically
 games_without_draws=games_without_draws.sort_values('winner')
 
-players_name=st.selectbox(label="Select player",options=games_without_draws['winner'].unique().tolist())
+players_name=st.selectbox(label="Select player",options=games_without_draws['winner'].unique().tolist(),index=6)
 
 game_info_df['date_played']=pd.to_datetime(game_info_df['date_played'],format='%Y.%m.%d',errors='coerce')
 #game_info_df['date_played']=game_info_df['date_played'].dt.date
