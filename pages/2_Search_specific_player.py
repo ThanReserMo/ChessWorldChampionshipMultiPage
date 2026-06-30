@@ -85,11 +85,16 @@ plt.xticks(rotation=30)
 #https://discuss.streamlit.io/t/code-to-create-chart-with-seaborn-objects/36491
 st.pyplot(winner_countplot.figure)
 
-st.write(f"Number of games won: {won_games}")
-st.write(f"Number of games drawn: {drawn_games}")
-st.write(f"Number of games lost: {lost_games}")
+col1,col2,col3,col4=st.columns(4)
 
-st.write(f"Total games: {total_games}")
+with col1:
+    st.write(f"Games won: {won_games}")
+with col2:
+    st.write(f"Games drawn: {drawn_games}")
+with col3:
+    st.write(f"Games lost: {lost_games}")
+with col4:
+    st.write(f"Total games: {total_games}")
 
 games_selected_and_openings=games_requested.merge(game_and_eco_and_name)
 
